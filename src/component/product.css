@@ -1,0 +1,49 @@
+.image{
+    margin-left: 200px;
+    margin-top: 20px;
+   
+   
+}
+img{
+    height: 500px;
+}
+section{
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+}
+
+.tag{
+    display:inline-flex;
+  margin-left: 100px;
+  margin-bottom: 10px
+}
+button{
+
+    border-radius: 2px;
+    border-color: aliceblue;
+    background-color: rgb(243, 89, 89);
+}
+.price1{
+    
+    margin-top: 5px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.article{
+    padding-top: 60px;
+    width: 60%;
+    margin: auto;
+}
+
+
+
+
+.title{
+    margin-top: 10px;
+    color: #777;
+}

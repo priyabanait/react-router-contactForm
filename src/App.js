@@ -5,14 +5,16 @@ import Home from './component/Home';
 import About from './component/About';
 import ContactUs from './component/ContactUs';
 import Header from './component/Header';
-
+import Product from './component/Product';
+import ProductDetail from './component/ProductDetail';
+import { Switch } from 'react-router-dom';
 function App() {
   
   
-     async function addMovieHandler(movie){
-      const response= await fetch('https://react-moviesform-default-rtdb.firebaseio.com/movies.json',{
+     async function contactHandler(contact){
+      const response= await fetch('https://react-moviesform-default-rtdb.firebaseio.com/contact.json',{
         method:'POST',
-        body:JSON.stringify(movie),
+        body:JSON.stringify(contact),
         headers:{
           'Content-Type':'application/json'
         }
@@ -25,15 +27,24 @@ function App() {
   return (
     <>
     <Header></Header>
+    <Switch>
       <Route path="/home">
         <Home></Home>
+      </Route>
+      <Route path="/product" exact>
+        <Product></Product>
       </Route>
       <Route path="/about">
         <About></About>
       </Route>
       <Route path="/contactPage">
-        <ContactUs onAddMovie={addMovieHandler}></ContactUs>
+        <ContactUs contactHandler={contactHandler}></ContactUs>
       </Route>
+      <Route path="/product/:productId">
+        <ProductDetail ></ProductDetail>
+      </Route>
+      </Switch>
+      
       
     
     </>

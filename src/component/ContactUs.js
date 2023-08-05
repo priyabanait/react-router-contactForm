@@ -11,13 +11,13 @@ export default function ContactUs(props) {
   
       // could add validation here...
   
-      const movie = {
+      const contact = {
         Username: nameRef.current.value,
         Email: emailTextRef.current.value,
         Phone: phoneRef.current.value,
       };
   
-      props.onAddMovie(movie);
+      props.contactHandler(contact);
     }
   return (
     <section className={classes.input}>
